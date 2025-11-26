@@ -1,0 +1,217 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+header{
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    background-color: rgb(95, 71, 71);;
+    width: 100%;
+    box-shadow: 0 5px 5px black;
+}
+header .container-cabecalho{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    padding: 10px 35px;
+    align-items: center;
+}
+header .container-cabecalho h1{
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal; /* "weight" é um valor inválido, use "normal", "bold" ou um número (ex: 400) */
+    font-style: normal;
+    margin-bottom: 0;
+}
+header .navegacao ul{
+    display: flex;
+    gap: 15px;
+    margin-bottom: 0;
+}
+header .navegacao ul li{
+    list-style: none;
+}
+header .navegacao ul li a{
+    text-decoration: none;
+    color: #fff;
+    transition: 0.2s ease-in-out;
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal; /* "weight" é um valor inválido, use "normal", "bold" ou um número (ex: 400) */
+    font-style: normal;
+}
+
+header .navegacao ul li a:hover{
+    border: 2px solid #fff;
+    padding: 10px;
+}
+header .menu-amburguer{
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between; 
+    cursor: pointer;
+    width: 25px; 
+    height: 100%; 
+}
+header .menu-amburguer span{
+    display: block;
+    height: 3px; /* Espessura de cada linha */
+    width: 100%; /* Linhas ocupam toda a largura do contêiner */
+    background-color: #fff; /* Cor das linhas */
+}
+.menu-lateral{
+    transition: 0.5s ease-in-out;
+    background-color: #ffffff;
+    transform: translateX(120%);
+    box-shadow: -5px 0px 5px black;;
+    width: 50vw;
+    height:100vh;
+    z-index: 1;
+    position: fixed;
+    overflow-y: hidden;
+    top: 0;
+    right: 0;
+}
+.menu-lateral > header{
+    background-color: rgba(0, 0, 0, 0.685);
+    box-shadow: 0 5px 5px black;;
+    border-left:1px solid #fff;
+    color: #ffffff;
+}
+.menu-lateral > header .container-cabecalho-menu-lateral #botao-fechar-menu{
+    border: none;
+    background-color: #00000000;
+    color: #fff;
+    cursor: pointer;
+    font-size: 25px;
+
+}
+.menu-lateral > header .container-cabecalho-menu-lateral{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    margin:8px;
+}
+.menu-lateral > header .container-cabecalho-menu-lateral h1{
+    margin-bottom: 0;
+}
+.ativo{
+    transform: translateX(0);
+}
+body{
+    background-color: rgb(95, 71, 71);
+    margin-top: 140px;
+}
+main .container-de-todos{
+    margin: 120px 25px;
+}
+main .container-de-todos .container-mae-sobre{
+    display: flex;
+    align-items: stretch; /* Garante que os filhos (imagem e texto) tenham a mesma altura */
+    gap: 10px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+main .container-de-todos .container-mae-sobre .carrosel-img-sobre {
+    width: 60%;
+}
+main .container-de-todos .container-mae-sobre .slick-list{
+    height: 100% !important;
+}
+.slick-list img{
+    /* Define uma altura máxima para a imagem e garante que ela cubra o espaço */
+    max-height: 400px;
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover; 
+}
+main .container-de-todos .container-mae-sobre .texto-sobre {
+    width: 40%;
+    font-family: "Outfit", sans-serif;
+    overflow-y: auto;
+    background-color: #fff; 
+}
+main .container-de-todos .container-mae-sobre .texto-sobre h2{
+    border-bottom: 2px solid black;
+    margin-bottom: 5px;
+}
+main .container-de-todos .container-mae-sobre .texto-sobre button{
+    padding: 10px;
+    width: 100%;
+    background-color: #000000;
+    transition: 0.3s ease-in-out;
+    color: #fff;
+    border: none;
+    margin-top: 10px;
+}
+main .container-de-todos .container-mae-sobre .texto-sobre button:hover{
+    background-color: #333; /* Cor de hover mais visível */
+}
+main .container-navegacao{
+    display: flex;
+    margin-top: 80px;
+    width: 100%;
+}
+main .container-navegacao button{
+    padding: 20px 12px;
+    width: 100%;
+    border: 1px solid #fff;
+    background-color: #000000;
+    color: #fff;
+}
+main .container-navegacao button:hover{
+    background-color: #333; /* Cor de hover mais visível */
+}
+.sesao-navegacao{
+    background-color: #000000;
+}
+section .texto-destaque{
+    margin-left: 15px;
+    margin-top: 15px;
+}
+main .cards{
+    display: flex;
+}
+.card .card-img-top {
+    max-height: 250px; 
+    width: 100%; 
+    object-fit: cover;
+}
+.card-link{
+    text-decoration: none;
+    background-color: #000000;
+    border-radius: 7px;
+    font-size: 15px;
+    text-align: center;
+    color: #fff;
+    padding: 7px;
+}
+.card-link:hover{
+    background-color: #333;
+}
+.container{
+    /* Esconde o container por padrão */
+    display: none;
+}
+.container.ativo-produtos{
+    /* Mostra o container quando a classe ativa é adicionada */
+    display: grid;
+}
+
+/* Estilos para telas menores (celulares e tablets) */
+@media (max-width: 768px) {
+    main .container-de-todos .container-mae-sobre {
+        flex-direction: column; /* Coloca a imagem em cima e o texto embaixo */
+    }
+
+    main .container-de-todos .container-mae-sobre .carrosel-img-sobre,
+    main .container-de-todos .container-mae-sobre .texto-sobre {
+        width: 100%; /* Faz ambos ocuparem a largura total */
+    }
+}
