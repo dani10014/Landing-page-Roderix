@@ -9,7 +9,7 @@ header{
     position: fixed;
     top: 0;
     z-index: 1;
-    background-color: rgb(95, 71, 71);;
+    background-color: rgb(95, 71, 71);
     width: 100%;
     box-shadow: 0 5px 5px black;
 }
@@ -62,6 +62,9 @@ header .menu-amburguer span{
     height: 3px; /* Espessura de cada linha */
     width: 100%; /* Linhas ocupam toda a largura do contêiner */
     background-color: #fff; /* Cor das linhas */
+}
+body{
+    transition: 0.5s ease-in-out;
 }
 .menu-lateral{
     transition: 0.5s ease-in-out;

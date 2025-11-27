@@ -8,8 +8,25 @@ $(document).ready(function(){
     let produtosCalcas = document.querySelector(".container.conteudo-calcas")
     let produtosAcessorios = document.querySelector(".container.conteudo-acessorios")
     let produtosCalcados= document.querySelector(".container.conteudo-calcados")
-    console.log(produtosCamisas);
-    
+    let botaoEntrar = document.getElementById("botao-entrar")
+
+    botaoEntrar.addEventListener("click", function(event){
+        event.preventDefault();
+        document.body.style.transform = "translateX(-100%)";
+
+    setTimeout(function(){
+        window.location.href = "login.html";
+    }, 600)
+    })
+
+    $(".carrosel-img-sobre").slick({
+        autoplay:true,
+        dots:false,
+        arrows:false,
+        slidesToShow:1,
+        slidesToScroll:1,
+    })
+
     btnMenuLateral.addEventListener("click", function(){
         menuLateral.classList.toggle("ativo")
     })
@@ -73,13 +90,5 @@ $(document).ready(function(){
             }
 
         })  
-    })
-
-    $(".carrosel-img-sobre").slick({
-        autoplay:true,
-        dots:false,
-        arrows:false,
-        slidesToShow:1,
-        slidesToScroll:1,
     })
 });
