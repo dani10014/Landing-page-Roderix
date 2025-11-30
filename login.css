@@ -3,13 +3,16 @@
     padding: 0;
     box-sizing: border-box;
 }
-html,body{
+body, html {
     transition: 0.5s ease-in-out;
 }
 header{
     background-color: rgb(95, 71, 71);
     padding: 10px 0px;
     box-shadow: 0 3px 3px black;
+    position: fixed;
+    width: 100%; /* Garante que o header ocupe toda a largura */
+    z-index: 1;
 }
 header .container-cabecalho h1{
     color: #fff;
@@ -35,68 +38,99 @@ header .container-cabecalho button{
 header .container-cabecalho button:hover{
     background-color: #b6b6b6a1;
 }
+
 main{
-    background-color: #000000;
+    /* Fundo mais suave e moderno */
+    background: linear-gradient(135deg, #4a3f3f, #2c2525);
+    padding-top: 70px; /* Adiciona espaço para o header fixo */
+    min-height: 100vh; /* Garante que o main ocupe toda a altura da tela */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 main section .container-mae .card-login{
     background-color: rgb(255, 255, 255);
-    padding: 20px;
+    padding: 30px 40px;
     border-radius: 15px;
-    width: 80%;
-    height: 80vh;
+    width: 100%; /* Usa 90% da largura em telas pequenas */
+    max-width: 600px; /* Deixa o card mais "grosso" (largo) */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    text-align: center;
 }
 main section .container-mae .card-login h1, h2{
     margin-bottom: 10px;
     font-family: "Quicksand", sans-serif;
     font-optical-sizing: auto;
-    font-weight: normal; /* "weight" é um valor inválido, use "normal", "bold" ou um número (ex: 400) */
+    font-weight: 500; /* Aumenta o peso da fonte para dar mais corpo */
     font-style: normal;
-
+    color: #333;
 }
 main section .container-mae .card-login .formulario{
     width: 100%;
+    text-align: left; /* Alinha os labels à esquerda */
 }
 main section .container-mae .card-login .formulario form{
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 15px; /* Aumenta o espaçamento entre os campos */
+}
+main section .container-mae .card-login .formulario p {
+    font-family: "Outfit", sans-serif;
+    font-weight: 500;
+    margin-bottom: -5px; /* Reduz o espaço entre o label e o input */
 }
 main section .container-mae .card-login .formulario button{
-    margin-top: 10px;
-    padding: 20px;
+    margin-top: 15px;
+    padding: 15px;
     background-color: rgb(0, 2, 139);
     color: #fff;
     border: none;
     border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+main section .container-mae .card-login .formulario button:hover{
+    background-color: rgb(20, 22, 159);
+    transform: translateY(-2px);
 }
 main section .container-mae .card-login .formulario input{
     width: 100%;
     padding: 15px;
     border-radius: 8px;
-    border: 1px solid rgba(0, 0, 0, 0.342)
+    border: 1px solid #ccc;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+main section .container-mae .card-login .formulario input:focus{
+    outline: none;
+    border-color: rgb(0, 2, 139);
+    box-shadow: 0 0 5px rgba(0, 2, 139, 0.5);
 }
 main section .container-mae .card-login .rede-social{
     width: 100%;
-    margin-top: 30px;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd; /* Linha separadora um pouco mais visível */
 }
 main section .container-mae .card-login .rede-social ul{
     display: flex;
+    justify-content: center; /* Centraliza os ícones */
+    gap: 20px; /* Espaçamento entre os ícones */
+    padding: 0; /* Remove o padding padrão da lista */
 }
 main section .container-mae .card-login .rede-social ul li{
-    width: 100%;
-    text-align: center;
+    /* width: 100%; */ /* Removido para os ícones ficarem lado a lado */
     list-style: none;
 }
 main section .container-mae .card-login .rede-social ul li a{
     text-decoration: none;
+    transition: transform 0.2s ease;
+    display: inline-block;
+}
+main section .container-mae .card-login .rede-social ul li a:hover{
+    transform: scale(1.1);
 }
 main section .container-mae .card-login .rede-social ul li a img{
-    width: 100%;
-}
-
-main section .container-mae{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: calc(100vh - 70px); /* Calcula a altura da tela menos a altura aproximada do header */
+    width: 40px; /* Define um tamanho fixo e menor para as imagens */
+    height: 40px;
 }

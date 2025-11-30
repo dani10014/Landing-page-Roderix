@@ -73,7 +73,7 @@ body{
     box-shadow: -5px 0px 5px black;;
     width: 50vw;
     height:100vh;
-    z-index: 1;
+    z-index: 10; /* Aumentado para garantir que fique sempre na frente */
     position: fixed;
     overflow-y: hidden;
     top: 0;
@@ -105,6 +105,38 @@ body{
 }
 .ativo{
     transform: translateX(0);
+}
+.conteudo-menu-lateral {
+    padding-top: 80px; /* Adiciona espaço no topo para não ficar atrás do header do menu */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+/* Aplica o estilo de botão apenas aos links diretos, não aos do rodapé */
+.conteudo-menu-lateral > a{
+    text-decoration: none;
+    color: #fff;
+    background-color: #000000;
+    padding: 20px;
+    border-bottom: 1px solid #4d4d4d;
+    transition: background-color 0.2s ease-in-out;
+}
+.conteudo-menu-lateral > a:hover {
+    background-color: #333;
+}
+.menu-footer{
+    display: flex;
+    margin-top: auto; /* Empurra o rodapé para o final do container flex */
+    background-color: #ffffff; /* Garante que o fundo seja branco */
+    border-top: 1px solid #e0e0e0; /* Adiciona uma linha sutil de separação */
+}
+.menu-footer a {
+    width: 50%;
+    text-align: center;
+    text-decoration: none;
+    color: #333; /* Cor escura para o texto */
+    padding: 20px 0;
+    transition: background-color 0.2s ease-in-out;
 }
 body{
     background-color: rgb(95, 71, 71);
