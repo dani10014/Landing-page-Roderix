@@ -80,7 +80,7 @@ body{
     right: 0;
 }
 .menu-lateral > header{
-    background-color: rgba(0, 0, 0, 0.685);
+    background-color:rgb(95, 71, 71);
     box-shadow: 0 5px 5px black;;
     border-left:1px solid #fff;
     color: #ffffff;
@@ -120,6 +120,7 @@ body{
     padding: 20px;
     border-bottom: 1px solid #4d4d4d;
     transition: background-color 0.2s ease-in-out;
+    text-align: center;
 }
 .conteudo-menu-lateral > a:hover {
     background-color: #333;
@@ -129,6 +130,9 @@ body{
     margin-top: auto; /* Empurra o rodapé para o final do container flex */
     background-color: #ffffff; /* Garante que o fundo seja branco */
     border-top: 1px solid #e0e0e0; /* Adiciona uma linha sutil de separação */
+    text-align: center;
+    margin-left: 15px;
+    
 }
 .menu-footer a {
     width: 50%;
@@ -244,9 +248,77 @@ main .cards{
     main .container-de-todos .container-mae-sobre {
         flex-direction: column; /* Coloca a imagem em cima e o texto embaixo */
     }
-
+    .conteudo-menu-lateral {
+        padding-top: 75px;
+    }
     main .container-de-todos .container-mae-sobre .carrosel-img-sobre,
     main .container-de-todos .container-mae-sobre .texto-sobre {
         width: 100%; /* Faz ambos ocuparem a largura total */
     }
+}
+@media (min-width: 768px){
+    .conteudo-menu-lateral{
+        padding-top: 90px;
+    }
+    .menu-lateral > header .container-cabecalho-menu-lateral{
+        padding: 12px 15px;
+    }
+    .menu-lateral{
+        width: 40vw;
+    }
+}
+
+.rodape {
+    background-color: #000000;
+    color: #fff;
+    padding: 40px 0;
+    margin-top: 20px;
+    border-top: 1px solid #333;
+}
+
+.rodape h4 {
+    font-family: "Quicksand", sans-serif;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.rodape ul {
+    list-style: none;
+    padding: 0;
+}
+.rodape ul li a {
+    text-decoration: none;
+    color: #ccc;
+    transition: color 0.2s ease-in-out;
+}
+.rodape ul li a:hover {
+    color: #fff;
+}
+.sesao-avaliacoes{
+    display: flex;
+    margin-top: 100px;
+    height: auto;
+    background-color: rgb(0, 0, 0);
+}
+.sesao-avaliacoes h2{
+    color: #fff;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+.sesao-avaliacoes .container-menu-avaliacoes{
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+    height: 50%;
+}  
+.sesao-avaliacoes .container-menu-avaliacoes button{
+    height: 20%;
+    height: 100%;
+    border: none;
+    background-color: #fff;
+    border: 1px solid #000;
+}
+.sesao-avaliacoes .container-menu-avaliacoes button:hover{
+    background-color: #333;
 }

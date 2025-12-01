@@ -134,3 +134,9 @@ main section .container-mae .card-login .rede-social ul li a img{
     width: 40px; /* Define um tamanho fixo e menor para as imagens */
     height: 40px;
 }
+
+@media (min-width: 768px) {
+    main section .container-mae .card-login{
+        width: 1000px;
+    }
+}
