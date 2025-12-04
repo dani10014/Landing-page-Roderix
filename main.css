@@ -54,13 +54,15 @@ header .menu-amburguer{
     justify-content: space-between; 
     cursor: pointer;
     width: 25px; 
+    background-color: transparent;
+    border: none;
     height: 100%; 
 }
 header .menu-amburguer span{
     display: block;
     height: 3px; /* Espessura de cada linha */
     width: 100%; /* Linhas ocupam toda a largura do contêiner */
-    background-color: #fff; /* Cor das linhas */
+    background-color: rgb(255, 255, 255); /* Cor das linhas */
 }
 body{
     transition: 0.5s ease-in-out;
@@ -82,6 +84,7 @@ body{
     background-color:rgb(95, 71, 71);
     box-shadow: 0 5px 5px black;;
     border-left:1px solid #fff;
+    border-bottom: none;
     color: #ffffff;
 }
 .menu-lateral > header .container-cabecalho-menu-lateral #botao-fechar-menu{
@@ -105,8 +108,7 @@ body{
 .ativo{
     transform: translateX(0);
 }
-.conteudo-menu-lateral {
-    padding-top: 80px; /* Adiciona espaço no topo para não ficar atrás do header do menu */
+.conteudo-menu-lateral{
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -159,8 +161,8 @@ main .container-de-todos .container-mae-sobre{
 main .container-de-todos .container-mae-sobre .carrosel-img-sobre {
     width: 60%;
 }
-main .container-de-todos .container-mae-sobre .slick-list{
-    height: 100% !important;
+main .container-de-todos .container-mae-sobre .slick-slider .slick-list{
+    height: 100%;
 }
 .slick-list img{
     /* Define uma altura máxima para a imagem e garante que ela cubra o espaço */
@@ -243,58 +245,30 @@ main .cards{
     transition: opacity 0.4s ease-in-out;
 }
 .container.ativo-produtos{
-    /* Mostra o container quando a classe ativa é adicionada */
     display: grid;
     opacity: 1;
     visibility: visible;
     height: auto;
 }
-
-/* Estilos para telas menores (celulares e tablets) */
-@media (max-width: 768px) {
-    main .container-de-todos .container-mae-sobre {
-        flex-direction: column; /* Coloca a imagem em cima e o texto embaixo */
-    }
-    .conteudo-menu-lateral {
-        padding-top: 75px;
-    }
-    main .container-de-todos .container-mae-sobre .carrosel-img-sobre,
-    main .container-de-todos .container-mae-sobre .texto-sobre {
-        width: 100%; /* Faz ambos ocuparem a largura total */
-    }
-}
-@media (min-width: 768px){
-    .conteudo-menu-lateral{
-        padding-top: 90px;
-    }
-    .menu-lateral > header .container-cabecalho-menu-lateral{
-        padding: 12px 15px;
-    }
-    .menu-lateral{
-        width: 40vw;
-    }
-}
-
-.rodape {
+#container{
     background-color: #000000;
     color: #fff;
-    padding: 40px 0;
+    padding: 10px 0;
+    padding-left: 20px;
     margin-top: 20px;
     border-top: 1px solid #333;
 }
-
-.rodape h4 {
+.rodape h4{
     font-family: "Quicksand", sans-serif;
     border-bottom: 1px solid #fff;
     padding-bottom: 10px;
     margin-bottom: 15px;
 }
-
-.rodape ul {
+.rodape ul{
     list-style: none;
     padding: 0;
 }
-.rodape ul li a {
+.rodape ul li a{
     text-decoration: none;
     color: #ccc;
     transition: color 0.2s ease-in-out;
@@ -308,9 +282,6 @@ main .cards{
     min-height: 300px; /* Define uma altura mínima para a seção */
     background-color: rgb(0, 0, 0);
     gap: 15px;
-}
-.sesao-avaliacoes h2{
-    color: #fff;
 }
 .sesao-avaliacoes .container-menu-avaliacoes{
     display: flex;
@@ -326,38 +297,84 @@ main .cards{
 .sesao-avaliacoes .container-menu-avaliacoes button:hover{
     background-color: #333;
 }
-.sesao-avaliacoes .container-conteudo-envio{
+.sesao-avaliacoes .container-conteudo-avaliacoes{
     height: 100%;
-    width: 80vw; /* Ocupa o restante da largura (100vw - 20vw do menu) */
+    width: 100%;
     padding: 25px; /* Usa padding em vez de margin para o espaçamento interno */
-    display: flex;
     word-wrap: break-word;
     gap: 20px;
+    position: relative; /* Necessário para o posicionamento dos filhos */
+    min-height: 400px; /* Garante que a altura seja consistente entre as abas */
 }
-.sesao-avaliacoes .conteudo-envio{
+.sesao-avaliacoes .conteudo-envio-interno{
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 100%;
-    width: 30%; /* Define uma largura para o contêiner da imagem/título */
+    width: 40%; /* Define uma largura para o contêiner da imagem/título */
 }
-.sesao-avaliacoes .conteudo-envio h2{
-    margin: 0;
+.conteudo-envio .conteudo-envio-interno h2{
+    margin: 0 0 10px 0;
     border-bottom: 2px solid #fff;
+    color: #fff; /* Título "Envio" permanece branco */
 }
-.sesao-avaliacoes .conteudo-envio img{
-    width: 100px;
-    height: 100px;
+.sesao-avaliacoes .conteudo-envio-interno img{
+    width: 100%;
+    height: 300px;
+    margin-top: 10px;
 }
 .sesao-avaliacoes .conteudo-texto-envio{
-    width: 70%; /* Define uma largura para o contêiner do texto */
+    width: 100%;
+    height: 100%; /* Define uma largura para o contêiner do texto */
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 5px;
 }
 .sesao-avaliacoes .conteudo-texto-envio p{
-    color: #fff;
+    color: #000000;
     margin:0;
 }
 .sesao-avaliacoes .conteudo-texto-envio ul{
     color: #858383;
     margin-top: 5px;
     margin-bottom: 0;
+}
+.conteudo-avaliacao {
+    display: none; /* Esconde todas as seções por padrão */
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+.conteudo-avaliacao.ativo-avaliacao {
+    display: flex; /* Mostra a seção ativa como flex */
+    opacity: 1;
+    gap: 20px;
+}
+.conteudo-avaliacoes .conteudo-texto-envio h2, .conteudo-seguranca .conteudo-texto-envio h2 {
+    color: #000000; /* Títulos dentro do card branco ficam pretos */
+}
+/* Estilos para telas menores (celulares e tablets) */
+@media (max-width: 768px) {
+    main .container-de-todos .container-mae-sobre {
+        flex-direction: column; /* Coloca a imagem em cima e o texto embaixo */
+    }
+    .conteudo-menu-lateral {
+        padding-top: 75px;
+    }
+    main .container-de-todos .container-mae-sobre .carrosel-img-sobre,
+    main .container-de-todos .container-mae-sobre .texto-sobre {
+        width: 100%;
+    }
+    
+    
+}
+@media (min-width: 768px){
+    .conteudo-menu-lateral{
+        padding-top: 90px;
+    }
+    .menu-lateral > header .container-cabecalho-menu-lateral{
+        padding: 12px 15px;
+    }
+    .menu-lateral{
+        width: 40vw;
+    }
 }

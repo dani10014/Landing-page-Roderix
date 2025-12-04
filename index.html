@@ -122,7 +122,7 @@
                         <h5 class="card-title">Pandora Life</h5> 
                         <h6 class="card-subtitle mb-2 text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos soluta, modi consequuntur expedita nemo illum, debitis optio in tempora ad exercitationem perferendis ullam accusantium, dicta explicabo blanditiis! Ab, sequi debitis!</h6>
                         <a href="#" class="card-link">Inspecionar</a>
-                        <a href="#" class="card-link-carrinho">Adicionar ao carrinho</a>
+                        <a href="#" class="card-link">Adicionar ao carrinho</a>
                     </div>
                 </div>
             </div>
@@ -184,22 +184,43 @@
 </section>
 <section class="sesao-avaliacoes">
     <div class="container-menu-avaliacoes">
-        <button>Envio</button>
-        <button>Avaliações</button>
-        <button>Segurança</button>
+        <button class="botao-avaliacoes" id="botao-envio" data-secao="envio">Envio</button>
+        <button class="botao-avaliacoes" id="botao-avaliacao" data-secao="avaliacoes">Avaliações</button>
+        <button class="botao-avaliacoes" id="botao-seguranca" data-secao = "seguranca">Segurança</button>
     </div>
-    <div class="container-conteudo-envio">
-        <div class="conteudo-envio">
-            <h2>Envio</h2>
-            <img src="./17009247.png">
+    <div class="container-conteudo-avaliacoes">
+        <div class="conteudo-avaliacao conteudo-envio">
+            <div class="conteudo-envio-interno">
+                <h2>Envio</h2>
+                <img src="./output-onlinegiftools-com.gif">
+            </div>
+            <div class="conteudo-texto-envio">
+                <p>Envio rápido. Produtos revisados antes da entrega para total segurança.</p>
+                <ul>
+                    <li>Prazo de entrega: 7-15 dias úteis</li>
+                    <li>Frete grátis para compras acima de R$150</li>
+                    <li>Rastreamento disponível para todos os pedidos</li>
+                    <li>Reembolso em caso de produto danificado</li>
+                </ul>
+            </div>
         </div>
-        <div class="conteudo-texto-envio">
-            <p>Envio rapido.Produtos revisados antes da entrega para total segurança</p>
-            <ul>
-                <li>Prazo de entrega: 7-15 dias úteis</li>
-                <li>Frete grátis para compras acima de R$150</li>
-                <li>Rastreamento disponível para todos os pedidos</li>
-            </ul>
+        <div class="conteudo-avaliacao conteudo-avaliacoes">
+            <div class="conteudo-texto-envio">
+                <h2>O que nossos clientes dizem</h2>
+                <p>"Entrega rápida e produto de excelente qualidade. Com certeza comprarei novamente!" - Maria S.</p>
+                <p>"Amei a minha calça, o caimento é perfeito. Recomendo!" - João P.</p>
+            </div>
+        </div>
+        <div class="conteudo-avaliacao conteudo-seguranca">
+            <div class="conteudo-texto-envio">
+                <h2>Sua compra segura</h2>
+                <p>Utilizamos as tecnologias mais avançadas para garantir a segurança dos seus dados e da sua compra.</p>
+                <ul>
+                    <li>Pagamento criptografado</li>
+                    <li>Proteção de dados pessoais</li>
+                    <li>Garantia de devolução</li>
+                </ul>
+            </div>
         </div>
     </div>
 </section>
@@ -226,7 +247,7 @@
 </div>
 </main>
     <footer class="rodape">
-        <div class="container">
+        <div id="container">
             <div class="row">
                 <div class="col-md-4">
                     <h4>Sobre a Roderix</h4>

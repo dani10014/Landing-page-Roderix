@@ -4,6 +4,7 @@ $(document).ready(function(){
     let menuLateral = document.querySelector(".menu-lateral")
     let btnFecharMenu = document.getElementById("botao-fechar-menu")
     const botoesSecoes = document.querySelectorAll(".botao-secao");
+    const botoesAvaliacoes = document.querySelectorAll(".botao-avaliacoes");
     let botaoEntrar = document.getElementById("botao-entrar")
 
     botaoEntrar.addEventListener("click", function(event){
@@ -34,6 +35,10 @@ $(document).ready(function(){
     document.querySelector(".container.conteudo-camisas").classList.add("ativo-produtos");
     document.getElementById("botao-camisas").style.borderBottom ="2px solid #b10000ff";
 
+    // Mostra a seção de envio por padrão e ativa o botão
+    document.querySelector(".conteudo-avaliacao.conteudo-envio").classList.add("ativo-avaliacao");
+    document.getElementById("botao-envio").style.border ="3px solid #b10000d8"; // Mantém o estilo inicial
+
     botoesSecoes.forEach(function(botaoClicado){
         botaoClicado.addEventListener("click", function(){
             const categoriaEscolhida = botaoClicado.dataset.categoria;
@@ -51,6 +56,25 @@ $(document).ready(function(){
             // 3. Mostra a seção correta e adiciona a borda no botão clicado
             document.querySelector(`.container.conteudo-${categoriaEscolhida}`).classList.add("ativo-produtos");
             botaoClicado.style.borderBottom = "2px solid #b10000ff";
+        });
+    });
+    botoesAvaliacoes.forEach(function(botaoClicado){
+        botaoClicado.addEventListener("click",function(){
+            const secaoEscolhida = botaoClicado.dataset.secao;
+    
+            // 1. Esconde todas as seções de avaliação
+            document.querySelectorAll(".conteudo-avaliacao").forEach(function(secao){
+                secao.classList.remove("ativo-avaliacao");
+            });
+    
+            // 2. Remove o estilo de todos os botões de avaliação
+            botoesAvaliacoes.forEach(function(botao) {
+                botao.style.border = "1px solid #290c0c"; // Volta ao estilo padrão
+            });
+    
+            // 3. Mostra a seção correta e adiciona o estilo no botão clicado
+            document.querySelector(`.conteudo-avaliacao.conteudo-${secaoEscolhida}`).classList.add("ativo-avaliacao");
+            botaoClicado.style.border = "3px solid #b10000d8";
         });
     });
 });

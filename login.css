@@ -74,7 +74,7 @@ main section .container-mae .card-login .formulario form{
     flex-direction: column;
     gap: 15px; /* Aumenta o espaçamento entre os campos */
 }
-main section .container-mae .card-login .formulario p {
+main section .container-mae .card-login .formulario label {
     font-family: "Outfit", sans-serif;
     font-weight: 500;
     margin-bottom: -5px; /* Reduz o espaço entre o label e o input */
