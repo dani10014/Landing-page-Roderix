@@ -364,6 +364,35 @@ main .cards{
     main .container-de-todos .container-mae-sobre .texto-sobre {
         width: 100%;
     }
+    .sesao-avaliacoes {
+        flex-direction: column; /* Empilha o menu e o conteúdo */
+        gap: 0; /* Remove o espaço entre o menu e o conteúdo */
+    }
+    .sesao-avaliacoes .container-menu-avaliacoes {
+        flex-direction: row; /* Botões ficam lado a lado no topo */
+        width: 100%;
+    }
+    .sesao-avaliacoes .container-menu-avaliacoes button {
+        padding: 15px 5px; /* Aumenta a altura e dá um respiro */
+        border: none; /* Remove a borda padrão */
+        border-bottom: 3px solid transparent; /* Borda inferior para o estado ativo */
+        background-color: #f0f0f0; /* Cor de fundo sutil */
+        color: #333;
+        font-weight: 500;
+        transition: all 0.3s ease; /* Transição suave */
+    }
+    .conteudo-avaliacao.ativo-avaliacao {
+        flex-direction: column; /* Empilha o GIF e o texto */
+        padding: 15px;
+    }
+    .sesao-avaliacoes .conteudo-envio-interno,
+    .sesao-avaliacoes .conteudo-texto-envio {
+        width: 100%; /* Fazem o GIF e o texto ocuparem toda a largura */
+    }
+    .sesao-avaliacoes .container-conteudo-avaliacoes {
+        min-height: auto; /* Permite que a altura se ajuste ao conteúdo */
+        padding: 0;
+    }
     
     
 }
