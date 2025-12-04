@@ -16,8 +16,7 @@ header{
 header .container-cabecalho{
     display: flex;
     justify-content: space-between;
-    margin: 10px;
-    padding: 10px 35px;
+    padding: 20px 45px;
     align-items: center;
 }
 header .container-cabecalho h1{
@@ -175,6 +174,7 @@ main .container-de-todos .container-mae-sobre .texto-sobre {
     font-family: "Outfit", sans-serif;
     overflow-y: auto;
     background-color: #fff; 
+    word-wrap: break-word;
 }
 main .container-de-todos .container-mae-sobre .texto-sobre h2{
     border-bottom: 2px solid black;
@@ -236,11 +236,18 @@ main .cards{
 }
 .container{
     /* Esconde o container por padrão */
-    display: none;
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+    transition: opacity 0.4s ease-in-out;
 }
 .container.ativo-produtos{
     /* Mostra o container quando a classe ativa é adicionada */
     display: grid;
+    opacity: 1;
+    visibility: visible;
+    height: auto;
 }
 
 /* Estilos para telas menores (celulares e tablets) */
@@ -298,27 +305,59 @@ main .cards{
 .sesao-avaliacoes{
     display: flex;
     margin-top: 100px;
-    height: auto;
+    min-height: 300px; /* Define uma altura mínima para a seção */
     background-color: rgb(0, 0, 0);
+    gap: 15px;
 }
 .sesao-avaliacoes h2{
     color: #fff;
-    margin-left: 10px;
-    margin-bottom: 20px;
 }
 .sesao-avaliacoes .container-menu-avaliacoes{
     display: flex;
     flex-direction: column;
     width: 20vw;
-    height: 50%;
 }  
 .sesao-avaliacoes .container-menu-avaliacoes button{
-    height: 20%;
-    height: 100%;
-    border: none;
     background-color: #fff;
-    border: 1px solid #000;
+    border: 1px solid #290c0c;
+    flex: 1; /* Faz os botões se esticarem para preencher o espaço vertical */
+    width: 100%;
 }
 .sesao-avaliacoes .container-menu-avaliacoes button:hover{
     background-color: #333;
+}
+.sesao-avaliacoes .container-conteudo-envio{
+    height: 100%;
+    width: 80vw; /* Ocupa o restante da largura (100vw - 20vw do menu) */
+    padding: 25px; /* Usa padding em vez de margin para o espaçamento interno */
+    display: flex;
+    word-wrap: break-word;
+    gap: 20px;
+}
+.sesao-avaliacoes .conteudo-envio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 30%; /* Define uma largura para o contêiner da imagem/título */
+}
+.sesao-avaliacoes .conteudo-envio h2{
+    margin: 0;
+    border-bottom: 2px solid #fff;
+}
+.sesao-avaliacoes .conteudo-envio img{
+    width: 100px;
+    height: 100px;
+}
+.sesao-avaliacoes .conteudo-texto-envio{
+    width: 70%; /* Define uma largura para o contêiner do texto */
+}
+.sesao-avaliacoes .conteudo-texto-envio p{
+    color: #fff;
+    margin:0;
+}
+.sesao-avaliacoes .conteudo-texto-envio ul{
+    color: #858383;
+    margin-top: 5px;
+    margin-bottom: 0;
 }

@@ -3,11 +3,7 @@ $(document).ready(function(){
     let btnMenuLateral = document.getElementById("botao-menu-amburguer")
     let menuLateral = document.querySelector(".menu-lateral")
     let btnFecharMenu = document.getElementById("botao-fechar-menu")
-    let botoesSecoes = document.querySelectorAll(".botao-secao");
-    let produtosCamisas = document.querySelector(".container.conteudo-camisas")
-    let produtosCalcas = document.querySelector(".container.conteudo-calcas")
-    let produtosAcessorios = document.querySelector(".container.conteudo-acessorios")
-    let produtosCalcados= document.querySelector(".container.conteudo-calcados")
+    const botoesSecoes = document.querySelectorAll(".botao-secao");
     let botaoEntrar = document.getElementById("botao-entrar")
 
     botaoEntrar.addEventListener("click", function(event){
@@ -34,61 +30,27 @@ $(document).ready(function(){
         menuLateral.classList.remove("ativo")
     })
     
-    produtosCamisas.classList.toggle("ativo-produtos")
+    // Mostra a seção de camisas por padrão e ativa o botão correspondente
+    document.querySelector(".container.conteudo-camisas").classList.add("ativo-produtos");
     document.getElementById("botao-camisas").style.borderBottom ="2px solid #b10000ff";
 
-    Array.from(botoesSecoes).forEach(function(button){
-        button.addEventListener("click",function(){
+    botoesSecoes.forEach(function(botaoClicado){
+        botaoClicado.addEventListener("click", function(){
+            const categoriaEscolhida = botaoClicado.dataset.categoria;
 
-            let categoriaEscolhida = button.dataset.categoria;
-            console.log(categoriaEscolhida);
-            
-            if(categoriaEscolhida == "camisas"){
-                produtosCamisas.classList.add("ativo-produtos")
-                produtosCalcas.classList.remove("ativo-produtos")
-                produtosAcessorios.classList.remove("ativo-produtos")
-                produtosCalcados.classList.remove("ativo-produtos")
+            // 1. Esconde todas as seções de produtos
+            document.querySelectorAll(".container[class*='conteudo-']").forEach(function(secao) {
+                secao.classList.remove("ativo-produtos");
+            });
 
-                document.getElementById("botao-camisas").style.borderBottom ="2px solid #b10000ff";
-                document.getElementById("botao-calcas").style.borderBottom ="none";
-                document.getElementById("botao-acessorios").style.borderBottom ="none";
-                document.getElementById("botao-calcados").style.borderBottom ="none";
-            }
-            else if(categoriaEscolhida == "calcas"){
-                produtosCamisas.classList.remove("ativo-produtos")
-                produtosCalcas.classList.add("ativo-produtos")
-                produtosAcessorios.classList.remove("ativo-produtos")
-                produtosCalcados.classList.remove("ativo-produtos")
+            // 2. Remove a borda de todos os botões
+            botoesSecoes.forEach(function(botao) {
+                botao.style.borderBottom = "none";
+            });
 
-                document.getElementById("botao-camisas").style.borderBottom ="none";
-                document.getElementById("botao-calcas").style.borderBottom ="2px solid #b10000ff";
-                document.getElementById("botao-acessorios").style.borderBottom ="none";
-                document.getElementById("botao-calcados").style.borderBottom ="none";
-            }
-            else if(categoriaEscolhida == "acessorios"){
-                produtosCamisas.classList.remove("ativo-produtos")
-                produtosCalcas.classList.remove("ativo-produtos")
-                produtosAcessorios.classList.add("ativo-produtos")
-                produtosCalcados.classList.remove("ativo-produtos")
-
-                document.getElementById("botao-camisas").style.borderBottom ="none";
-                document.getElementById("botao-calcas").style.borderBottom ="none";
-                document.getElementById("botao-acessorios").style.borderBottom ="2px solid #b10000ff";
-                document.getElementById("botao-calcados").style.borderBottom ="none";
-            }
-            
-            else if(categoriaEscolhida == "calcados"){
-                produtosCamisas.classList.remove("ativo-produtos")
-                produtosCalcas.classList.remove("ativo-produtos")
-                produtosAcessorios.classList.remove("ativo-produtos")
-                produtosCalcados.classList.add("ativo-produtos")
-
-                document.getElementById("botao-camisas").style.borderBottom ="none";
-                document.getElementById("botao-calcas").style.borderBottom ="none";
-                document.getElementById("botao-acessorios").style.borderBottom ="none";
-                document.getElementById("botao-calcados").style.borderBottom ="2px solid #b10000ff";
-            }
-
-        })  
-    })
+            // 3. Mostra a seção correta e adiciona a borda no botão clicado
+            document.querySelector(`.container.conteudo-${categoriaEscolhida}`).classList.add("ativo-produtos");
+            botaoClicado.style.borderBottom = "2px solid #b10000ff";
+        });
+    });
 });
